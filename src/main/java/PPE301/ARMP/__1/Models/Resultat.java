@@ -17,6 +17,7 @@ public class Resultat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String niveau;
 
     @ManyToOne
     @JoinColumn(name = "eleve_id")

@@ -21,6 +21,8 @@ import java.util.List;
 @AllArgsConstructor    @Getter @Setter @ToString @Builder
 public class Reponse {
 
+    @Setter
+    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -36,4 +38,7 @@ public class Reponse {
     @ElementCollection
     private List<ReponseDetail> reponses;
 
+    public Long getId() {
+        return id;
+    }
 }

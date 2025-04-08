@@ -29,8 +29,13 @@ public class ExerciceController {
         return exerciceService.getExercicesByEnseignant(enseignantId);
     }
 
-    @PostMapping
+    @PostMapping("/exercices")
     public Exercice createExercice(@RequestBody Exercice exercice) {
         return exerciceService.createExercice(exercice);
+    }
+
+    @GetMapping("/exercices")
+    public List<Exercice> getAllExercices() {
+        return exerciceService.getAllExercices();
     }
 }

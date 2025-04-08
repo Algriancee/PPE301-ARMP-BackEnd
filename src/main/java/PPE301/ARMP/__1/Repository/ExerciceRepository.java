@@ -20,8 +20,7 @@ public interface ExerciceRepository  extends JpaRepository<Exercice, Long>{
     List<Exercice> findByEleveId(Long eleveId);
 
     // Trouver les exercices attribués à une classe
-    List<Exercice> findByClasse(String classe);
-
-    // Trouver les exercices par niveau
     List<Exercice> findByNiveau(String niveau);
+
+
 }
