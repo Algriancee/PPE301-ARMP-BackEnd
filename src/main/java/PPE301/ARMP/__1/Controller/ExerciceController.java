@@ -29,13 +29,28 @@ public class ExerciceController {
         return exerciceService.getExercicesByEnseignant(enseignantId);
     }
 
-    @PostMapping("/exercices")
+    @PostMapping
     public Exercice createExercice(@RequestBody Exercice exercice) {
         return exerciceService.createExercice(exercice);
     }
 
-    @GetMapping("/exercices")
+    @GetMapping
     public List<Exercice> getAllExercices() {
         return exerciceService.getAllExercices();
+    }
+
+    @PutMapping("/{id}")
+    public Exercice modifierExercice(@PathVariable Long id, @RequestBody Exercice exercice) {
+        return exerciceService.modifierExercice(id, exercice);
+    }
+
+    @GetMapping("/{id}")
+    public Exercice getExerciceById(@PathVariable Long id) {
+        return exerciceService.getExerciceById(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void supprimerExercice(@PathVariable Long id) {
+        exerciceService.supprimerExercice(id);
     }
 }

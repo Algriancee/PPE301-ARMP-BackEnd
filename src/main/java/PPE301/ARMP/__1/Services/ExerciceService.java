@@ -35,4 +35,22 @@ public class ExerciceService {
     public List<Exercice> getAllExercices() {
         return exerciceRepository.findAll();
     }
+
+    public Exercice modifierExercice(Long id, Exercice exercice) {
+        Exercice existant = exerciceRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Exercice non trouvé"));
+        existant.setTitre(exercice.getTitre());
+        existant.setDescription(exercice.getDescription());
+        // ajoute d'autres champs si nécessaire
+        return exerciceRepository.save(existant);
+    }
+
+    public Exercice getExerciceById(Long id) {
+        return exerciceRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Exercice non trouvé"));
+    }
+
+    public void supprimerExercice(Long id) {
+        exerciceRepository.deleteById(id);
+    }
 }

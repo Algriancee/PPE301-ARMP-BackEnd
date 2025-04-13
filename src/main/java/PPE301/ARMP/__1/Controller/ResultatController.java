@@ -20,4 +20,18 @@ public class ResultatController {
     public List<Resultat> getResultatsByEleve(@PathVariable Long eleveId) {
         return resultatService.getResultatsByEleve(eleveId);
     }
+
+    @GetMapping("/exercice/{exerciceId}")
+    public List<Resultat> getResultatsByExercice(@PathVariable Long exerciceId) {
+        return resultatService.getResultatsByExercice(exerciceId);
+    }
+
+    @GetMapping
+    public List<Resultat> getAllResultats() {
+        return resultatService.getAllResultats();
+    }
+    @GetMapping("/{id}")
+    public Resultat getResultatById(@PathVariable Long id) {
+        return resultatService.getResultatById(id);
+    }
 }

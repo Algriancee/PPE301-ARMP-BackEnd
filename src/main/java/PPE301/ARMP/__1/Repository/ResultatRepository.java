@@ -17,4 +17,6 @@ public interface ResultatRepository extends JpaRepository<Resultat, Long> {
 
     // Récupérer les résultats d’une classe
     List<Resultat> findByNiveau(String niveau);
+
+    List<Resultat> findByExerciceId(Long exerciceId);
 }

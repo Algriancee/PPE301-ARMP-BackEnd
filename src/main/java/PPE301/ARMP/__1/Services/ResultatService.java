@@ -12,10 +12,25 @@ public class ResultatService {
     private final ResultatRepository resultatRepository;
 
     public ResultatService(ResultatRepository resultatRepository) {
+
         this.resultatRepository = resultatRepository;
     }
 
     public List<Resultat> getResultatsByEleve(Long eleveId) {
+
         return resultatRepository.findByEleveId(eleveId);
+    }
+
+    public List<Resultat> getResultatsByExercice(Long exerciceId) {
+            return resultatRepository.findByExerciceId(exerciceId);
+    }
+
+    public List<Resultat> getAllResultats() {
+        return resultatRepository.findAll();
+    }
+
+    public Resultat getResultatById(Long id) {
+        return resultatRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Résultat non trouvé"));
     }
 }
