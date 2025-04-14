@@ -23,13 +23,13 @@ public class Exercice {
     @OneToMany(mappedBy = "exercice", cascade = CascadeType.ALL)
     private List<Question> questions;
 
-    @ManyToOne
-    @JoinColumn(name = "enseignant_id")
-    private User enseignant;
+    //@ManyToOne
+    //@JoinColumn(name = "enseignant_id")
+    //private User enseignant;
 
-    @ManyToOne
-    @JoinColumn(name = "eleve_id")
-    private User eleve;
+    //@ManyToOne
+    //@JoinColumn(name = "eleve_id")
+    //private User eleve;
 
     
 

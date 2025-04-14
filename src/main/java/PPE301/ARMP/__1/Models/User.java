@@ -26,14 +26,14 @@ public class User {
     private String password;
     //private String niveau;
 
-    @OneToMany(mappedBy = "eleve")
-    private List<Resultat> resultats;
+    //@OneToMany(mappedBy = "eleve")
+    //private List<Resultat> resultats;
 
-    @OneToMany(mappedBy = "eleve")
-    private List<Reponse> reponses;
+    //@OneToMany(mappedBy = "eleve")
+    //private List<Reponse> reponses;
 
-    @OneToMany(mappedBy = "enseignant")
-    private List<Exercice> exercices;
+    //@OneToMany(mappedBy = "enseignant")
+    //private List<Exercice> exercices;
 
 
 }

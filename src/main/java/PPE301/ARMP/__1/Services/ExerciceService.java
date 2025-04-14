@@ -16,9 +16,9 @@ public class ExerciceService {
         this.exerciceRepository = exerciceRepository;
     }
 
-    public List<Exercice> getExercicesByEnseignant(Long enseignantId) {
-        return exerciceRepository.findByEnseignantId(enseignantId);
-    }
+    //public List<Exercice> getExercicesByEnseignant(Long enseignantId) {
+        //return exerciceRepository.findByEnseignantId(enseignantId);
+    //}
 
     public Exercice createExercice(Exercice exercice) {
         // Associer l'exercice à chaque question

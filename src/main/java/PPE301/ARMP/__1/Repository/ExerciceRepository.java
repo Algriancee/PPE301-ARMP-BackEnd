@@ -14,10 +14,10 @@ import java.util.Optional;
 public interface ExerciceRepository  extends JpaRepository<Exercice, Long>{
 
     // Trouver tous les exercices d’un enseignant
-    List<Exercice> findByEnseignantId(Long enseignantId);
+    //List<Exercice> findByEnseignantId(Long enseignantId);
 
     // Trouver les exercices attribués à un élève précis
-    List<Exercice> findByEleveId(Long eleveId);
+    //List<Exercice> findByEleveId(Long eleveId);
 
     // Trouver les exercices attribués à une classe
     List<Exercice> findByNiveau(String niveau);

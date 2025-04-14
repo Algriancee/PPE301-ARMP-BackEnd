@@ -21,9 +21,9 @@ public class Question {
     private Long id;
     private String enonce;
 
-    @ElementCollection
-    private List<String> choix;
-    private String bonneReponse;
+    //@ElementCollection
+    //private List<String> choix;
+    //private String bonneReponse;
     private String explication;
 
     @ManyToOne

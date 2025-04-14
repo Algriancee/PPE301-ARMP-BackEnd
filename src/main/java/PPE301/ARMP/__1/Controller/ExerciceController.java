@@ -24,10 +24,10 @@ public class ExerciceController {
         this.exerciceService = exerciceService;
     }
 
-    @GetMapping("/enseignant/{enseignantId}")
-    public List<Exercice> getExercicesByEnseignant(@PathVariable Long enseignantId) {
-        return exerciceService.getExercicesByEnseignant(enseignantId);
-    }
+    //@GetMapping("/enseignant/{enseignantId}")
+    //public List<Exercice> getExercicesByEnseignant(@PathVariable Long enseignantId) {
+        //return exerciceService.getExercicesByEnseignant(enseignantId);
+    //}
 
     @PostMapping
     public Exercice createExercice(@RequestBody Exercice exercice) {

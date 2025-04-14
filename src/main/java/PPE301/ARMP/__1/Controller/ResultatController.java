@@ -16,14 +16,19 @@ public class ResultatController {
         this.resultatService = resultatService;
     }
 
-    @GetMapping("/eleve/{eleveId}")
-    public List<Resultat> getResultatsByEleve(@PathVariable Long eleveId) {
-        return resultatService.getResultatsByEleve(eleveId);
-    }
+    //@GetMapping("/eleve/{eleveId}")
+    //public List<Resultat> getResultatsByEleve(@PathVariable Long eleveId) {
+        //return resultatService.getResultatsByEleve(eleveId);
+    //}
 
     @GetMapping("/exercice/{exerciceId}")
     public List<Resultat> getResultatsByExercice(@PathVariable Long exerciceId) {
         return resultatService.getResultatsByExercice(exerciceId);
+    }
+
+    @PostMapping
+    public Resultat addResultat(@RequestBody Resultat resultat) {
+        return resultatService.addResultat(resultat);
     }
 
     @GetMapping
@@ -33,5 +38,13 @@ public class ResultatController {
     @GetMapping("/{id}")
     public Resultat getResultatById(@PathVariable Long id) {
         return resultatService.getResultatById(id);
+    }
+    @PutMapping("/{id}")
+    public Resultat updateResultat(@PathVariable Long id, @RequestBody Resultat resultat) {
+        return resultatService.updateResultat(id, resultat);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteResultat(@PathVariable Long id) {
+        resultatService.deleteResultat(id);
     }
 }

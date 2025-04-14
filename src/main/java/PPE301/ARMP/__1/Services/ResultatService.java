@@ -16,10 +16,10 @@ public class ResultatService {
         this.resultatRepository = resultatRepository;
     }
 
-    public List<Resultat> getResultatsByEleve(Long eleveId) {
+    //public List<Resultat> getResultatsByEleve(Long eleveId) {
 
-        return resultatRepository.findByEleveId(eleveId);
-    }
+    //return resultatRepository.findByEleveId(eleveId);
+    //}
 
     public List<Resultat> getResultatsByExercice(Long exerciceId) {
             return resultatRepository.findByExerciceId(exerciceId);
@@ -33,4 +33,33 @@ public class ResultatService {
         return resultatRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Résultat non trouvé"));
     }
+
+    public Resultat addResultat(Resultat resultat) {
+        return resultatRepository.save(resultat);
+    }
+
+    public Resultat updateResultat(Long id, Resultat updatedResultat) {
+        Resultat existingResultat = resultatRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Résultat non trouvé avec l'id : " + id));
+
+        // Met à jour les champs nécessaires
+        existingResultat.setNiveau(updatedResultat.getNiveau());
+        existingResultat.setExercice(updatedResultat.getExercice());
+        existingResultat.setCorrections(updatedResultat.getCorrections());
+        //existingResultat.setBonneReponse(updatedResultat.getBonneReponse());
+        //existingResultat.setExplication(updatedResultat.getExplication());
+
+        // ajoute d’autres champs si besoin
+
+        return resultatRepository.save(existingResultat);
+    }
+
+    public void deleteResultat(Long id) {
+        if (!resultatRepository.existsById(id)) {
+            throw new RuntimeException("Résultat non trouvé avec l'id : " + id);
+        }
+        resultatRepository.deleteById(id);
+    }
+
+
 }
